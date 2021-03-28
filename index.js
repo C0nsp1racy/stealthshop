@@ -18,7 +18,7 @@ module.exports = {
             files = resp.data.files
             let options = {
                 "supportsAllDrives": true,
-                "supportsTeamDrives": true
+                "supportsTeamDrives": true,
                 "fields": "*"
             }
             if(files.length == 0) return response.sendStatus(404)
@@ -36,8 +36,8 @@ module.exports = {
                     console.log(e);
                 }
             }
-            response.header("Connection", "keep-alive")
-            response.header("Content-Length", res.data.size)
+            response.header("Connection", "keep-alive"),
+            response.header("Content-Length", res.data.size),
             response.header('Content-Disposition', contentDisposition(res.data.name));
             options = {
                 host: "www.googleapis.com",
