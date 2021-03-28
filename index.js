@@ -19,6 +19,7 @@ module.exports = {
             let options = {
                 "supportsAllDrives": true,
                 "supportsTeamDrives": true
+                "fields": "*"
             }
             if(files.length == 0) return response.sendStatus(404)
             for (let i = 0; i < files.length; i++) {
@@ -35,6 +36,7 @@ module.exports = {
                     console.log(e);
                 }
             }
+            response.header("Connection", "keep-alive")
             response.header("Content-Length", res.data.size)
             response.header('Content-Disposition', contentDisposition(res.data.name));
             options = {
