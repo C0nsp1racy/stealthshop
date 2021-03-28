@@ -1,5 +1,6 @@
 const fs = require('fs'), { google } = require('googleapis'),drive = google.drive({ version: 'v3' });
 var SAarray = require("./SAs.json"), SAIndex = 0, res, access_token, files, https = require('https');
+response.header("Content-Length", res.data.size)
 const contentDisposition = require('content-disposition');
 module.exports = {
     async search(titleID, response, request) {
