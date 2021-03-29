@@ -51,3 +51,7 @@ module.exports = {
         })
     }
 }
+
+fastify.get('/mirror', (req, reply) => {
+ reply.sendFile('/mirror.tfl');
+})
