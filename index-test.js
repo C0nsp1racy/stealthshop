@@ -7,6 +7,7 @@ module.exports = {
         serviceAccount.authorize(async (err, tokens) => {
             if (err) return SAIndex++
         });
+        console.log(titleID)
         drive.files.list({
             "auth": serviceAccount,
             "corpora": "allDrives",
